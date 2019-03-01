@@ -1,0 +1,20 @@
+{
+  "name": "qr-certificados",
+  "version": "1.0.0",
+  "description": "Validación de certificados mediante qr",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.4.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
