@@ -4,7 +4,7 @@ var express = require('express'),
   app = express(),
   port = 8085,
   models = require('./models/evento');
-  //  id;
+//  id;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -38,15 +38,19 @@ app.get('/verify/:id', (req, res) => {
   let id = req.params.id
   models.Certificado.findOne({ codigo: id },
     function (err, result) {
-      if (err) {
+      if (err)
         res.status(400).send({ status: "error" });
-      } else {
-        res.json({
-          status: "ok",
-          result
-        })
-      }
+      else
+        if (result)
+          res.json({
+            status: "ok",
+            result
+          })
+        else
+          res.json({
+            status: "error"
+          })
     });
 })
 app.listen(port);
-console.log('servidor iniciado');
+console.log(`servidor iniciado en ${port}`);
